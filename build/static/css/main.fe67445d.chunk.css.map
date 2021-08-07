@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,QACE,wBAAkC,CAClC,UAAW,CACX,WACF,CAIA,EACE,SACF","file":"main.fe67445d.chunk.css","sourcesContent":[".header {\n  background-color: rgb(9, 160, 110);\n  color: #fff;\n  height: 50px;\n}\n\n\n\np{\n  color: red;\n}\n\n\n\n"]}
