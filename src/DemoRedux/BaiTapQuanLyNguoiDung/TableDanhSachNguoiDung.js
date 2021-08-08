@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 class TableDanhSachNguoiDung extends Component {
     render() {
         return (
-            <div className="card">
+            <div className="card mt-5">
                 <div className="card-header bg-dark text-white">
                     Danh sách người dùng
                 </div>
@@ -34,12 +34,17 @@ class TableDanhSachNguoiDung extends Component {
                                     <td>{nguoiDung.maLoaiNguoiDung}</td>
                                     <td>
                                         <button className="btn btn-outline-danger mr-2" onClick={()=>{
-                                            const action ={
+
+                                            const action = {
                                                 type:'XOA_NGUOI_DUNG',
                                                 taiKhoan:nguoiDung.taiKhoan
                                             }
-                                        }}>Xóa</button>
-                                        <button className="btn btn-outline-primary">Chỉnh sửa</button>
+
+                                            this.props.dispatch(action);
+                                        }}>Xoá</button>
+                                        <button className="btn btn-outline-primary">
+                                            Chỉnh sửa
+                                        </button>
                                     </td>
                                 </tr>
                             })
@@ -50,12 +55,10 @@ class TableDanhSachNguoiDung extends Component {
         )
     }
 }
-
-// { return  <==> ()
-
-
-const mapStateToProps = (state)=> ({
-    mangNguoiDung: state.BaiTapQuanLyNguoiDungReducer.mangNguoiDung
+/*
+    { return      <=>  ()
+*/
+const mapStateToProps = (state) => ({
+    mangNguoiDung: state.baiTapQuanLyNguoiDungReducer.mangNguoiDung
 })
-
 export default connect(mapStateToProps)(TableDanhSachNguoiDung)
